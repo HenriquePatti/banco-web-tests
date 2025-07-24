@@ -1,8 +1,11 @@
 describe('Login', () => {
-  it('Deve acessar o sistemas com credenciais validas', () => {
+  
+  beforeEach( ()=> {
     // Arrange
     cy.visit('http://localhost:4000')
-       
+  })
+
+  it('Deve acessar o sistemas com credenciais validas', () => {
     // Act
     cy.get('#username')
       .click()
@@ -22,9 +25,6 @@ describe('Login', () => {
   })
 
   it('Deve exibir mensagem de erro quando informado credenciais inválidas', () => {
-    // Arrange
-    cy.visit('http://localhost:4000')
-
     // Act
     cy.get('#username')
       .click()
