@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run",
-    "web": "cypress open"
+    "test": "CYPRESS_BASE_URL=http://localhost:4000 CYPRESS_USERNAME=julio.lima CYPRESS_PASSWORD=123456 cypress open",
+    "prod:headless": "CYPRESS_BASE_URL=http://localhost:4000 CYPRESS_USERNAME=julio.lima CYPRESS_PASSWORD=123456 cypress run ",
+    "prod:headed": "CYPRESS_BASE_URL=http://localhost:4000 CYPRESS_USERNAME=julio.lima CYPRESS_PASSWORD=123456 cypress run --headed",
+    "prod:open": "cypress open"
   },
   "repository": {
     "type": "git",
